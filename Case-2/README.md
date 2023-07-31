@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+# Calculadora Solar
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Uma aplicação React que permite calcular e visualizar sistemas solares fotovoltaicos para consumidores residenciais (B2C). A aplicação utiliza o Firebase como backend e base de dados para persistir os dados dos cálculos realizados.
 
-## Available Scripts
+## Funcionalidades
 
-In the project directory, you can run:
+- Dimensionamento de sistemas solares: Insira a potência total do sistema solar em kilo Watts (kW) e obtenha a quantidade de painéis, inversores, potência do painel utilizado, comprimento de estrutura necessário e área útil necessária para a instalação no telhado.
 
-### `npm start`
+- Visualização dos resultados: Após realizar o cálculo, a aplicação exibirá os resultados dos dimensionamentos realizados para cada sistema solar.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Tecnologias utilizadas
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- React: Framework JavaScript para a construção da interface do usuário.
+- Firebase: Plataforma de desenvolvimento de aplicativos web que fornece serviços de backend como autenticação, banco de dados e hospedagem.
 
-### `npm test`
+## Configuração do Firebase
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Antes de executar a aplicação localmente, é necessário configurar um projeto no Firebase e obter as credenciais de configuração. Siga os passos abaixo:
 
-### `npm run build`
+1. Crie um projeto no [Firebase Console](https://console.firebase.google.com/).
+2. No painel do projeto, clique em "Adicionar app" e escolha a opção "Web".
+3. Copie as credenciais de configuração fornecidas pelo Firebase e substitua os campos no arquivo `src/firebase.js` do projeto.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Instalação e Execução
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Para executar a aplicação localmente, siga os passos abaixo:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Clone este repositório para o seu ambiente local: git clone (https://github.com/Enricky9/case-holu/tree/main/Case-2).
 
-### `npm run eject`
+2. Instale as dependências do projeto: npm install
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+4. Inicie a aplicação: npm start
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+A aplicação estará disponível em `http://localhost:3000`.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Estrutura do Projeto
 
-## Learn More
+A estrutura de arquivos e pastas do projeto é organizada da seguinte forma:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- `public`: Contém os arquivos estáticos da aplicação.
+- `src`: Contém os arquivos da aplicação React.
+  - `components`: Contém os componentes React da aplicação.
+  - `firebase.js`: Configuração do Firebase.
+  - `App.js`: Arquivo principal da aplicação React.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
