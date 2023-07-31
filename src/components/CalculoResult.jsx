@@ -1,22 +1,27 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import db from '../firebase';
+import { useNavigate } from 'react-router-dom';
+import { getDoc, doc } from "firebase/firestore";
+import {db} from '../firebase';
 
 const CalculoResult = () => {
   const { id } = useParams();
-  const [calculo, setCalculo] = useState(null);
+  const [calculo, setCalculo] = useState();
+
+  const navigate = useNavigate();
+
 
   useEffect(() => {
     const fetchCalculo = async () => {
-      const docRef = db.collection('calculos').doc(id);
-      const doc = await docRef.get();
-      if (doc.exists) {
-        setCalculo(doc.data());
+      
+      const docRef = await getDoc(doc(db, 'calculos', id));
+      if (docRef.exists()) {
+        setCalculo(docRef.data());
       }
     };
 
     fetchCalculo();
-  }, [id]);
+  }, []);
 
   if (!calculo) {
     return <div>Carregando...</div>;
@@ -25,8 +30,10 @@ const CalculoResult = () => {
   return (
     <div className="result-container">
     <h2>Resultado do Cálculo</h2>
-    <p>Potência Total: {calculo.potenciaTotal} kW</p>
-    {/* Outros campos do cálculo aqui... */}
+    <p>Area Util Paineis: {calculo.areaUtilPaineis.toFixed(2)} m²</p>
+    <p>Comprimento Estrutura: {calculo.comprimentoEstrutura.toFixed(2)} m²</p>
+    <button onClick={() => navigate("/calculo")} className="back-button">Voltar</button>
+    
   </div>
   );
 };
